@@ -160,18 +160,19 @@ class _MessBillScreenState extends State<MessBillScreen> {
             itemBuilder: (context, index) {
               return ExpansionTile(
                   title: Row(children: [
-                    Text("${messBillKeys[index]} Year"),
+                    Text("${messBillKeys[index]} Semester"),
                     const SizedBox(
                       width: 7,
                     ),
                     if (studentMessBills[index]["isPaid"] as bool)
                       const Icon(
                         Icons.check,
-                        color: Color.fromARGB(255, 0, 190, 184),
+                        color: Colors.green,
                       ),
                     if (!studentMessBills[index]["isPaid"])
                       const Icon(
                         Icons.pending,
+                        color: Color.fromARGB(255, 255, 191, 105),
                       )
                   ]),
                   subtitle: const Text("amount 21900"),
@@ -260,9 +261,9 @@ class _MessBillScreenState extends State<MessBillScreen> {
                                         2190000, "INR", messBillKeys[index]);
                                   },
                                   style: const ButtonStyle(
-                                      backgroundColor: MaterialStatePropertyAll<
-                                              Color>(
-                                          Color.fromARGB(255, 0, 190, 184))),
+                                      backgroundColor:
+                                          MaterialStatePropertyAll<Color>(
+                                              Color.fromARGB(255, 2, 48, 71))),
                                   child: const Text(
                                     "Pay",
                                     style: TextStyle(color: Colors.white),

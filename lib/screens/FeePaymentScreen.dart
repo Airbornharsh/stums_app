@@ -154,11 +154,12 @@ class _FeePaymentScreenState extends State<FeePaymentScreen> {
                     if (studentFeePayments[index]["isPaid"] as bool)
                       const Icon(
                         Icons.check,
-                        color: Color.fromARGB(255, 0, 190, 184),
+                        color: Colors.green,
                       ),
                     if (!studentFeePayments[index]["isPaid"])
                       const Icon(
                         Icons.pending,
+                        color: Color.fromARGB(255, 255, 191, 105),
                       )
                   ]),
                   subtitle: const Text("amount 22900"),
@@ -200,9 +201,9 @@ class _FeePaymentScreenState extends State<FeePaymentScreen> {
                                         2290000, "INR", feePaymentKeys[index]);
                                   },
                                   style: const ButtonStyle(
-                                      backgroundColor: MaterialStatePropertyAll<
-                                              Color>(
-                                          Color.fromARGB(255, 0, 190, 184))),
+                                      backgroundColor:
+                                          MaterialStatePropertyAll<Color>(
+                                              Color.fromARGB(255, 2, 48, 71))),
                                   child: const Text(
                                     "Pay",
                                     style: TextStyle(color: Colors.white),

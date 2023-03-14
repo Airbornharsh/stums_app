@@ -41,7 +41,7 @@ class _LeaveApplicationScreenState extends State<LeaveApplicationScreen> {
       children: [
         Scaffold(
           appBar: AppBar(
-            backgroundColor: const Color.fromARGB(255, 0, 190, 184),
+            backgroundColor: const Color.fromARGB(255, 2, 48, 71),
             title: const Text("Leave Application"),
           ),
           body: Column(
@@ -63,8 +63,7 @@ class _LeaveApplicationScreenState extends State<LeaveApplicationScreen> {
                           padding: const EdgeInsets.only(top: 4),
                           decoration: BoxDecoration(
                               border: Border.all(
-                                  color:
-                                      const Color.fromARGB(255, 0, 190, 184))),
+                                  color: const Color.fromARGB(255, 2, 48, 71))),
                           child: TextField(
                             style: const TextStyle(color: Colors.black),
                             decoration: const InputDecoration(
@@ -85,8 +84,7 @@ class _LeaveApplicationScreenState extends State<LeaveApplicationScreen> {
                           padding: const EdgeInsets.only(top: 4),
                           decoration: BoxDecoration(
                               border: Border.all(
-                                  color:
-                                      const Color.fromARGB(255, 0, 190, 184))),
+                                  color: const Color.fromARGB(255, 2, 48, 71))),
                           child: TextField(
                             style: const TextStyle(color: Colors.black),
                             keyboardType: TextInputType.multiline,
@@ -109,8 +107,7 @@ class _LeaveApplicationScreenState extends State<LeaveApplicationScreen> {
                           padding: const EdgeInsets.only(top: 4),
                           decoration: BoxDecoration(
                               border: Border.all(
-                                  color:
-                                      const Color.fromARGB(255, 0, 190, 184))),
+                                  color: const Color.fromARGB(255, 2, 48, 71))),
                           child: DateTimeField(
                             decoration: const InputDecoration(
                               border: InputBorder.none,
@@ -136,8 +133,7 @@ class _LeaveApplicationScreenState extends State<LeaveApplicationScreen> {
                           padding: const EdgeInsets.only(top: 4),
                           decoration: BoxDecoration(
                               border: Border.all(
-                                  color:
-                                      const Color.fromARGB(255, 0, 190, 184))),
+                                  color: const Color.fromARGB(255, 2, 48, 71))),
                           child: DateTimeField(
                             decoration: const InputDecoration(
                               border: InputBorder.none,
@@ -163,8 +159,7 @@ class _LeaveApplicationScreenState extends State<LeaveApplicationScreen> {
                           padding: const EdgeInsets.only(top: 4),
                           decoration: BoxDecoration(
                               border: Border.all(
-                                  color:
-                                      const Color.fromARGB(255, 0, 190, 184))),
+                                  color: const Color.fromARGB(255, 2, 48, 71))),
                           child: TextField(
                             style: const TextStyle(color: Colors.black),
                             decoration: const InputDecoration(
@@ -190,10 +185,14 @@ class _LeaveApplicationScreenState extends State<LeaveApplicationScreen> {
                                   _descriptionController.text.isEmpty ||
                                   _hostelController.text.isEmpty) {
                                 snackBar(context, "Fill all Details");
+                                setState(() {
+                                  _isLoading = false;
+                                });
                                 return;
                               }
 
-                              String res = await Provider.of<User>(context,listen: false)
+                              String res = await Provider.of<User>(context,
+                                      listen: false)
                                   .addLeaveApplication(
                                       subject: _subjectController.text,
                                       description: _descriptionController.text,
@@ -226,7 +225,7 @@ class _LeaveApplicationScreenState extends State<LeaveApplicationScreen> {
                           },
                           style: ButtonStyle(
                               backgroundColor: MaterialStateProperty.all<Color>(
-                                  const Color.fromARGB(255, 0, 190, 184))),
+                                  const Color.fromARGB(255, 2, 48, 71))),
                           child: const Text(
                             "Submit",
                             style: TextStyle(color: Colors.white),

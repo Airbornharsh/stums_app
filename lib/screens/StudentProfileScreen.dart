@@ -37,7 +37,7 @@ class _StudentProfileScreenState extends State<StudentProfileScreen> {
                 const Text(
                   "Name",
                   style: TextStyle(
-                      color: Color.fromARGB(255, 0, 190, 184),
+                      color: Color.fromARGB(255, 2, 48, 71),
                       fontSize: 18,
                       fontWeight: FontWeight.w500),
                 ),
@@ -50,7 +50,7 @@ class _StudentProfileScreenState extends State<StudentProfileScreen> {
                         const EdgeInsets.symmetric(horizontal: 8, vertical: 10),
                     decoration: BoxDecoration(
                         border: Border.all(
-                            color: const Color.fromARGB(255, 0, 190, 184),
+                            color: const Color.fromARGB(255, 2, 48, 71),
                             width: 1)),
                     child: Text(
                       student.name,
@@ -62,7 +62,7 @@ class _StudentProfileScreenState extends State<StudentProfileScreen> {
                 const Text(
                   "Phone Number",
                   style: TextStyle(
-                      color: Color.fromARGB(255, 0, 190, 184),
+                      color: Color.fromARGB(255, 2, 48, 71),
                       fontSize: 18,
                       fontWeight: FontWeight.w500),
                 ),
@@ -75,7 +75,7 @@ class _StudentProfileScreenState extends State<StudentProfileScreen> {
                         const EdgeInsets.symmetric(horizontal: 8, vertical: 10),
                     decoration: BoxDecoration(
                         border: Border.all(
-                            color: const Color.fromARGB(255, 0, 190, 184),
+                            color: const Color.fromARGB(255, 2, 48, 71),
                             width: 1)),
                     child: Text(
                       student.phoneNumber,
@@ -87,7 +87,7 @@ class _StudentProfileScreenState extends State<StudentProfileScreen> {
                 const Text(
                   "Email Id",
                   style: TextStyle(
-                      color: Color.fromARGB(255, 0, 190, 184),
+                      color: Color.fromARGB(255, 2, 48, 71),
                       fontSize: 18,
                       fontWeight: FontWeight.w500),
                 ),
@@ -100,7 +100,7 @@ class _StudentProfileScreenState extends State<StudentProfileScreen> {
                         const EdgeInsets.symmetric(horizontal: 8, vertical: 10),
                     decoration: BoxDecoration(
                         border: Border.all(
-                            color: const Color.fromARGB(255, 0, 190, 184),
+                            color: const Color.fromARGB(255, 2, 48, 71),
                             width: 1)),
                     child: Text(
                       student.emailId,
@@ -112,7 +112,7 @@ class _StudentProfileScreenState extends State<StudentProfileScreen> {
                 const Text(
                   "Date of Birth",
                   style: TextStyle(
-                      color: Color.fromARGB(255, 0, 190, 184),
+                      color: Color.fromARGB(255, 2, 48, 71),
                       fontSize: 18,
                       fontWeight: FontWeight.w500),
                 ),
@@ -125,7 +125,7 @@ class _StudentProfileScreenState extends State<StudentProfileScreen> {
                         const EdgeInsets.symmetric(horizontal: 8, vertical: 10),
                     decoration: BoxDecoration(
                         border: Border.all(
-                            color: const Color.fromARGB(255, 0, 190, 184),
+                            color: const Color.fromARGB(255, 2, 48, 71),
                             width: 1)),
                     child: Text(
                       DateFormat.yMd().format(

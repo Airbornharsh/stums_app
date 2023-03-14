@@ -104,7 +104,7 @@ class User with ChangeNotifier {
   Future<String> facultyLogin(String institute, String password) async {
     var client = Client();
     final prefs = await SharedPreferences.getInstance();
-    String domainUri = prefs.get("stums_backend_uri") as String;
+    String domainUri = prefs.getString("stums_backend_uri") as String;
 
     try {
       var tokenRes = await client.post(
@@ -156,9 +156,12 @@ class User with ChangeNotifier {
   Future<String> studentLogin(String registrationNo, String password) async {
     var client = Client();
     final prefs = await SharedPreferences.getInstance();
-    String domainUri = prefs.get("stums_backend_uri") as String;
+    String domainUri = prefs.getString("stums_backend_uri") as String;
+
+    print(domainUri);
 
     try {
+
       var tokenRes = await client.post(
           Uri.parse("$domainUri/api/student/login"),
           body: json
@@ -202,6 +205,7 @@ class User with ChangeNotifier {
 
       return "Done";
     } catch (e) {
+      print(e);
       return "Error";
     } finally {
       client.close();
@@ -217,7 +221,7 @@ class User with ChangeNotifier {
       required String hostel}) async {
     var client = Client();
     final prefs = await SharedPreferences.getInstance();
-    String domainUri = prefs.get("stums_backend_uri") as String;
+    String domainUri = prefs.getString("stums_backend_uri") as String;
 
     try {
       var res = await client.post(
@@ -250,7 +254,7 @@ class User with ChangeNotifier {
   Future<bool> studentFeePaymentList() async {
     var client = Client();
     final prefs = await SharedPreferences.getInstance();
-    String domainUri = prefs.get("stums_backend_uri") as String;
+    String domainUri = prefs.getString("stums_backend_uri") as String;
     String? accessToken = prefs.getString("stums_accessToken");
     try {
       var res = await client
@@ -281,7 +285,7 @@ class User with ChangeNotifier {
   Future<bool> studentMessBillList() async {
     var client = Client();
     final prefs = await SharedPreferences.getInstance();
-    String domainUri = prefs.get("stums_backend_uri") as String;
+    String domainUri = prefs.getString("stums_backend_uri") as String;
     String? accessToken = prefs.getString("stums_accessToken");
     try {
       var res = await client
@@ -315,7 +319,7 @@ class User with ChangeNotifier {
       required String year}) async {
     var client = Client();
     final prefs = await SharedPreferences.getInstance();
-    String domainUri = prefs.get("stums_backend_uri") as String;
+    String domainUri = prefs.getString("stums_backend_uri") as String;
     String? accessToken = prefs.getString("stums_accessToken");
     try {
       var res = await client.post(
@@ -355,7 +359,7 @@ class User with ChangeNotifier {
   }) async {
     var client = Client();
     final prefs = await SharedPreferences.getInstance();
-    String domainUri = prefs.get("stums_backend_uri") as String;
+    String domainUri = prefs.getString("stums_backend_uri") as String;
     String? accessToken = prefs.getString("stums_accessToken");
     try {
       var res = await client.post(
@@ -394,7 +398,7 @@ class User with ChangeNotifier {
       required int roomNo}) async {
     var client = Client();
     final prefs = await SharedPreferences.getInstance();
-    String domainUri = prefs.get("stums_backend_uri") as String;
+    String domainUri = prefs.getString("stums_backend_uri") as String;
     String? accessToken = prefs.getString("stums_accessToken");
     try {
       var res = await client.post(Uri.parse("$domainUri/api/student/mess-bill"),
@@ -435,7 +439,7 @@ class User with ChangeNotifier {
   }) async {
     var client = Client();
     final prefs = await SharedPreferences.getInstance();
-    String domainUri = prefs.get("stums_backend_uri") as String;
+    String domainUri = prefs.getString("stums_backend_uri") as String;
     String? accessToken = prefs.getString("stums_accessToken");
     try {
       var res = await client.post(
@@ -469,7 +473,7 @@ class User with ChangeNotifier {
   Future<bool> leaveApplicationsList() async {
     var client = Client();
     final prefs = await SharedPreferences.getInstance();
-    String domainUri = prefs.get("stums_backend_uri") as String;
+    String domainUri = prefs.getString("stums_backend_uri") as String;
     String? accessToken = prefs.getString("stums_accessToken");
     try {
       var res = await client.post(
@@ -501,7 +505,7 @@ class User with ChangeNotifier {
   Future<bool> facultyLeaveApplicationsList() async {
     var client = Client();
     final prefs = await SharedPreferences.getInstance();
-    String domainUri = prefs.get("stums_backend_uri") as String;
+    String domainUri = prefs.getString("stums_backend_uri") as String;
     String? accessToken = prefs.getString("stums_accessToken");
     try {
       var res = await client.post(
@@ -533,7 +537,7 @@ class User with ChangeNotifier {
   Future<bool> facultyFeePaymentsList() async {
     var client = Client();
     final prefs = await SharedPreferences.getInstance();
-    String domainUri = prefs.get("stums_backend_uri") as String;
+    String domainUri = prefs.getString("stums_backend_uri") as String;
     String? accessToken = prefs.getString("stums_accessToken");
     try {
       print("ok");
@@ -565,7 +569,7 @@ class User with ChangeNotifier {
   Future<bool> facultyMessBillList() async {
     var client = Client();
     final prefs = await SharedPreferences.getInstance();
-    String domainUri = prefs.get("stums_backend_uri") as String;
+    String domainUri = prefs.getString("stums_backend_uri") as String;
     String? accessToken = prefs.getString("stums_accessToken");
     try {
       var res = await client
@@ -602,7 +606,7 @@ class User with ChangeNotifier {
       required String dob}) async {
     var client = Client();
     final prefs = await SharedPreferences.getInstance();
-    String domainUri = prefs.get("stums_backend_uri") as String;
+    String domainUri = prefs.getString("stums_backend_uri") as String;
     String? accessToken = prefs.getString("stums_accessToken");
 
     try {

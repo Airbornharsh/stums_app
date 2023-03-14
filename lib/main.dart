@@ -38,8 +38,8 @@ class MyApp extends StatelessWidget {
         title: 'MTrace',
         theme: ThemeData(
           colorScheme: ColorScheme.fromSwatch().copyWith(
-            primary: const Color.fromARGB(255, 0, 190, 184),
-            // primary: const Color.fromARGB(255, 0, 190, 184),
+            primary: const Color.fromARGB(255, 2, 48, 71),
+            // primary: const Color.fromARGB(255, 2, 48, 71),
           ),
         ),
         // home: const HomeScreen(),

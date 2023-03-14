@@ -16,9 +16,8 @@ class _HomeScreenState extends State<HomeScreen> {
     // TODO: implement initState
     void onLoad() async {
       final prefs = await SharedPreferences.getInstance();
-      // prefs.setString("hopl_backend_uri", "http://localhost:3000");
-      prefs.setString("stums_backend_uri", "http://10.0.2.2:3000");
-      // prefs.setString("shore_backend_uri", "https://shore.vercel.app");
+      // prefs.setString("stums_backend_uri", "http://10.0.2.2:3000");
+      prefs.setString("stums_backend_uri", "https://stums.vercel.app");
     }
 
     onLoad();
@@ -73,8 +72,8 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                         const Text(
                           "Login as Student",
-                          style: TextStyle(
-                              color: Color.fromARGB(255, 0, 190, 184)),
+                          style:
+                              TextStyle(color: Color.fromARGB(255, 2, 48, 71)),
                         ),
                       ],
                     )),
@@ -109,8 +108,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                       const Text(
                         "Login as Faculty",
-                        style:
-                            TextStyle(color: Color.fromARGB(255, 0, 190, 184)),
+                        style: TextStyle(color: Color.fromARGB(255, 2, 48, 71)),
                       ),
                     ],
                   ),

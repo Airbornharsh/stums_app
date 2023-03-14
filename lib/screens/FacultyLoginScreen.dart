@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:provider/provider.dart';
+import 'package:stums_app/Utils/snackBar.dart';
 import 'package:stums_app/providers/user.dart';
 import 'package:stums_app/screens/FacultyScreen.dart';
 import 'package:stums_app/screens/StudentLoginScreen.dart';
@@ -63,7 +64,7 @@ class _FacultyLoginScreenState extends State<FacultyLoginScreen> {
                       padding: const EdgeInsets.only(top: 4),
                       decoration: BoxDecoration(
                           border: Border.all(
-                              color: const Color.fromARGB(255, 0, 190, 184))),
+                              color: const Color.fromARGB(255, 2, 48, 71))),
                       child: TextField(
                         style: const TextStyle(color: Colors.black),
                         decoration: const InputDecoration(
@@ -84,7 +85,7 @@ class _FacultyLoginScreenState extends State<FacultyLoginScreen> {
                       padding: const EdgeInsets.only(top: 4),
                       decoration: BoxDecoration(
                           border: Border.all(
-                              color: const Color.fromARGB(255, 0, 190, 184))),
+                              color: const Color.fromARGB(255, 2, 48, 71))),
                       child: TextField(
                         style: const TextStyle(color: Colors.black),
                         decoration: const InputDecoration(
@@ -107,6 +108,15 @@ class _FacultyLoginScreenState extends State<FacultyLoginScreen> {
                           setState(() {
                             isLoading = true;
                           });
+
+                          if (_instituteController.text.isEmpty ||
+                              _instituteController.text.isEmpty) {
+                            snackBar(context, "Fill all Details");
+                            setState(() {
+                              isLoading = false;
+                            });
+                            return;
+                          }
                           String loginRes =
                               await Provider.of<User>(context, listen: false)
                                   .facultyLogin("GCEK", "GCEK20099002KECG");
@@ -149,7 +159,7 @@ class _FacultyLoginScreenState extends State<FacultyLoginScreen> {
                         },
                         style: ButtonStyle(
                             backgroundColor: MaterialStateProperty.all<Color>(
-                                const Color.fromARGB(255, 0, 190, 184))),
+                                const Color.fromARGB(255, 2, 48, 71))),
                         child: const Text(
                           "Login",
                           style: TextStyle(color: Colors.white),
@@ -166,7 +176,7 @@ class _FacultyLoginScreenState extends State<FacultyLoginScreen> {
                         "Login as Student Instead",
                         style: TextStyle(
                             fontSize: 14,
-                            color: Color.fromARGB(255, 0, 190, 184)),
+                            color: Color.fromARGB(255, 2, 48, 71)),
                       ),
                     ),
                   ],

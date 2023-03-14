@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:stums_app/Utils/snackBar.dart';
 import 'package:stums_app/providers/user.dart';
 import 'package:stums_app/screens/FacultyLoginScreen.dart';
 import 'package:stums_app/screens/StudentScreen.dart';
@@ -15,13 +16,13 @@ class StudentLoginScreen extends StatefulWidget {
 class _StudentLoginScreenState extends State<StudentLoginScreen> {
   bool isLoading = false;
 
-  final _registrationNoControllerController = TextEditingController();
+  final _registrationNoController = TextEditingController();
   final _passwordController = TextEditingController();
 
   @override
   void dispose() {
     // TODO: implement dispose
-    _registrationNoControllerController.dispose();
+    _registrationNoController.dispose();
     _passwordController.dispose();
     super.dispose();
   }
@@ -62,7 +63,7 @@ class _StudentLoginScreenState extends State<StudentLoginScreen> {
                         padding: const EdgeInsets.only(top: 4),
                         decoration: BoxDecoration(
                             border: Border.all(
-                                color: const Color.fromARGB(255, 0, 190, 184))),
+                                color: const Color.fromARGB(255, 2, 48, 71))),
                         child: TextField(
                           style: const TextStyle(color: Colors.black),
                           decoration: const InputDecoration(
@@ -74,7 +75,7 @@ class _StudentLoginScreenState extends State<StudentLoginScreen> {
                             fillColor: Colors.white,
                             filled: true,
                           ),
-                          controller: _registrationNoControllerController,
+                          controller: _registrationNoController,
                         ),
                       ),
                       Container(
@@ -83,7 +84,7 @@ class _StudentLoginScreenState extends State<StudentLoginScreen> {
                         padding: const EdgeInsets.only(top: 4),
                         decoration: BoxDecoration(
                             border: Border.all(
-                                color: const Color.fromARGB(255, 0, 190, 184))),
+                                color: const Color.fromARGB(255, 2, 48, 71))),
                         child: TextField(
                           style: const TextStyle(color: Colors.black),
                           decoration: const InputDecoration(
@@ -106,11 +107,20 @@ class _StudentLoginScreenState extends State<StudentLoginScreen> {
                             setState(() {
                               isLoading = true;
                             });
+
+                            if (_registrationNoController.text.isEmpty ||
+                                _passwordController.text.isEmpty) {
+                              snackBar(context, "Fill all Details");
+                              setState(() {
+                                isLoading = false;
+                              });
+                              return;
+                            }
+
                             String loginRes =
                                 await Provider.of<User>(context, listen: false)
                                     .studentLogin(
-                                        _registrationNoControllerController.text
-                                            .trim(),
+                                        _registrationNoController.text.trim(),
                                         _passwordController.text.trim());
                             // await Provider.of<User>(context, listen: false)
                             //     .studentLogin("2101110049", "Password1");
@@ -148,7 +158,7 @@ class _StudentLoginScreenState extends State<StudentLoginScreen> {
                           },
                           style: ButtonStyle(
                               backgroundColor: MaterialStateProperty.all<Color>(
-                                  const Color.fromARGB(255, 0, 190, 184))),
+                                  const Color.fromARGB(255, 2, 48, 71))),
                           child: const Text(
                             "Login",
                             style: TextStyle(color: Colors.white),
@@ -165,7 +175,7 @@ class _StudentLoginScreenState extends State<StudentLoginScreen> {
                           "Login as Faculty Instead",
                           style: TextStyle(
                               fontSize: 14,
-                              color: Color.fromARGB(255, 0, 190, 184)),
+                              color: Color.fromARGB(255, 2, 48, 71)),
                         ),
                       ),
                     ],

@@ -51,8 +51,8 @@ class _StudentScreenState extends State<StudentScreen> {
               child: Column(
             children: [
               Container(
-                decoration: const BoxDecoration(
-                    color: Color.fromARGB(255, 0, 190, 184)),
+                decoration:
+                    const BoxDecoration(color: Color.fromARGB(255, 2, 48, 71)),
                 height: 200,
                 width: double.infinity,
                 child: Center(
@@ -109,13 +109,14 @@ class _StudentScreenState extends State<StudentScreen> {
             width: MediaQuery.of(context).size.width,
             child: Center(
               child: Container(
-                width: MediaQuery.of(context).size.width - 10,
+                margin: EdgeInsets.only(top: 25),
+                width: MediaQuery.of(context).size.width - 30,
                 child: GridView(
                     gridDelegate:
                         const SliverGridDelegateWithFixedCrossAxisCount(
                             crossAxisCount: 2,
-                            crossAxisSpacing: 10,
-                            mainAxisSpacing: 10),
+                            crossAxisSpacing: 15,
+                            mainAxisSpacing: 15),
                     children: [
                       GestureDetector(
                         onTap: () {
@@ -124,8 +125,15 @@ class _StudentScreenState extends State<StudentScreen> {
                         },
                         child: Container(
                           decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(3)),
+                            color: Color.fromARGB(255, 237, 223, 250),
+                            borderRadius: BorderRadius.circular(20),
+                            boxShadow: const [
+                              BoxShadow(
+                                  color: Colors.grey,
+                                  blurRadius: 4,
+                                  blurStyle: BlurStyle.normal)
+                            ],
+                          ),
                           child: Column(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
@@ -142,7 +150,8 @@ class _StudentScreenState extends State<StudentScreen> {
                                 const Text(
                                   "Add Leave Application",
                                   style: TextStyle(
-                                      color: Color.fromARGB(255, 0, 190, 184),
+                                      color:
+                                          const Color.fromARGB(255, 2, 48, 71),
                                       fontWeight: FontWeight.w500),
                                 )
                               ]),
@@ -155,8 +164,15 @@ class _StudentScreenState extends State<StudentScreen> {
                         },
                         child: Container(
                           decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(3)),
+                            color: Color.fromARGB(255, 247, 236, 208),
+                            borderRadius: BorderRadius.circular(20),
+                            boxShadow: const [
+                              BoxShadow(
+                                  color: Colors.grey,
+                                  blurRadius: 4,
+                                  blurStyle: BlurStyle.normal)
+                            ],
+                          ),
                           child: Column(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
@@ -173,7 +189,8 @@ class _StudentScreenState extends State<StudentScreen> {
                                 const Text(
                                   "Fee Payment",
                                   style: TextStyle(
-                                      color: Color.fromARGB(255, 0, 190, 184),
+                                      color:
+                                          const Color.fromARGB(255, 2, 48, 71),
                                       fontWeight: FontWeight.w500),
                                 )
                               ]),
@@ -186,8 +203,15 @@ class _StudentScreenState extends State<StudentScreen> {
                         },
                         child: Container(
                           decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(3)),
+                            color: Color.fromARGB(255, 223, 241, 250),
+                            borderRadius: BorderRadius.circular(20),
+                            boxShadow: const [
+                              BoxShadow(
+                                  color: Colors.grey,
+                                  blurRadius: 4,
+                                  blurStyle: BlurStyle.normal)
+                            ],
+                          ),
                           child: Column(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
@@ -204,7 +228,8 @@ class _StudentScreenState extends State<StudentScreen> {
                                 const Text(
                                   "Mess Bill",
                                   style: TextStyle(
-                                      color: Color.fromARGB(255, 0, 190, 184),
+                                      color:
+                                          const Color.fromARGB(255, 2, 48, 71),
                                       fontWeight: FontWeight.w500),
                                 )
                               ]),
@@ -217,8 +242,15 @@ class _StudentScreenState extends State<StudentScreen> {
                         },
                         child: Container(
                           decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(3)),
+                            color: Color.fromARGB(255, 224, 241, 203),
+                            borderRadius: BorderRadius.circular(20),
+                            boxShadow: const [
+                              BoxShadow(
+                                  color: Colors.grey,
+                                  blurRadius: 4,
+                                  blurStyle: BlurStyle.normal)
+                            ],
+                          ),
                           child: Column(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
@@ -235,7 +267,8 @@ class _StudentScreenState extends State<StudentScreen> {
                                 const Text(
                                   "Leave Applications",
                                   style: TextStyle(
-                                      color: Color.fromARGB(255, 0, 190, 184),
+                                      color:
+                                          const Color.fromARGB(255, 2, 48, 71),
                                       fontWeight: FontWeight.w500),
                                 )
                               ]),
