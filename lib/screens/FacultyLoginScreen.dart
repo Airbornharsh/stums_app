@@ -37,14 +37,14 @@ class _FacultyLoginScreenState extends State<FacultyLoginScreen> {
           body: Container(
             height: MediaQuery.of(context).size.height,
             width: MediaQuery.of(context).size.width,
-            decoration: const BoxDecoration(color: Colors.white),
+            decoration: BoxDecoration(color: Colors.grey.shade200),
             child: Center(
               child: Container(
                 padding: const EdgeInsets.only(
                     top: 20, left: 10, right: 10, bottom: 20),
                 width: (MediaQuery.of(context).size.width - 70),
                 // height: 500,
-                constraints: const BoxConstraints(maxHeight: 270),
+                constraints: const BoxConstraints(maxHeight: 310),
                 decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(15),
@@ -58,18 +58,28 @@ class _FacultyLoginScreenState extends State<FacultyLoginScreen> {
                     ]),
                 child: Column(
                   children: [
+                    const Text(
+                      "Faculty Login",
+                      style:
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
+                    ),
+                    const SizedBox(height: 6,),
                     Container(
                       margin: const EdgeInsets.symmetric(
                           horizontal: 15, vertical: 10),
-                      padding: const EdgeInsets.only(top: 4),
-                      decoration: BoxDecoration(
-                          border: Border.all(
-                              color: const Color.fromARGB(255, 2, 48, 71))),
+                      decoration: const BoxDecoration(
+                        boxShadow: [
+                          BoxShadow(
+                              color: Colors.grey,
+                              blurRadius: 2,
+                              blurStyle: BlurStyle.normal)
+                        ],
+                      ),
                       child: TextField(
                         style: const TextStyle(color: Colors.black),
                         decoration: const InputDecoration(
                           border: InputBorder.none,
-                          hintText: "Institute",
+                          labelText: "Institute",
                           hintStyle: TextStyle(
                             color: Colors.black,
                           ),
@@ -82,15 +92,19 @@ class _FacultyLoginScreenState extends State<FacultyLoginScreen> {
                     Container(
                       margin: const EdgeInsets.symmetric(
                           horizontal: 15, vertical: 10),
-                      padding: const EdgeInsets.only(top: 4),
-                      decoration: BoxDecoration(
-                          border: Border.all(
-                              color: const Color.fromARGB(255, 2, 48, 71))),
+                      decoration: const BoxDecoration(
+                        boxShadow: [
+                          BoxShadow(
+                              color: Colors.grey,
+                              blurRadius: 2,
+                              blurStyle: BlurStyle.normal)
+                        ],
+                      ),
                       child: TextField(
                         style: const TextStyle(color: Colors.black),
                         decoration: const InputDecoration(
                           border: InputBorder.none,
-                          hintText: "Password",
+                          labelText: "Password",
                           hintStyle: TextStyle(
                             color: Colors.black,
                           ),
@@ -110,21 +124,21 @@ class _FacultyLoginScreenState extends State<FacultyLoginScreen> {
                           });
 
                           if (_instituteController.text.isEmpty ||
-                              _instituteController.text.isEmpty) {
+                              _passwordController.text.isEmpty) {
                             snackBar(context, "Fill all Details");
                             setState(() {
                               isLoading = false;
                             });
                             return;
                           }
+                          // String loginRes =
+                          // await Provider.of<User>(context, listen: false)
+                          //     .facultyLogin("GCEK", "GCEK20099002KECG");
                           String loginRes =
                               await Provider.of<User>(context, listen: false)
-                                  .facultyLogin("GCEK", "GCEK20099002KECG");
-                          // String loginRes =
-                          //     await Provider.of<User>(context, listen: false)
-                          //         .facultyLogin(
-                          //             _instituteController.text.trim(),
-                          //             _passwordController.text..trim());
+                                  .facultyLogin(
+                                      _instituteController.text.trim(),
+                                      _passwordController.text..trim());
 
                           if (loginRes == "Done") {
                             var snackBar = SnackBar(

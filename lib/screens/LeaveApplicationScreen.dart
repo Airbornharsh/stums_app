@@ -60,10 +60,14 @@ class _LeaveApplicationScreenState extends State<LeaveApplicationScreen> {
                         Container(
                           margin: const EdgeInsets.symmetric(
                               horizontal: 20, vertical: 14),
-                          padding: const EdgeInsets.only(top: 4),
-                          decoration: BoxDecoration(
-                              border: Border.all(
-                                  color: const Color.fromARGB(255, 2, 48, 71))),
+                          decoration: const BoxDecoration(
+                            boxShadow: [
+                              BoxShadow(
+                                  color: Colors.grey,
+                                  blurRadius: 2,
+                                  blurStyle: BlurStyle.normal)
+                            ],
+                          ),
                           child: TextField(
                             style: const TextStyle(color: Colors.black),
                             decoration: const InputDecoration(
@@ -81,10 +85,14 @@ class _LeaveApplicationScreenState extends State<LeaveApplicationScreen> {
                         Container(
                           margin: const EdgeInsets.symmetric(
                               horizontal: 20, vertical: 14),
-                          padding: const EdgeInsets.only(top: 4),
-                          decoration: BoxDecoration(
-                              border: Border.all(
-                                  color: const Color.fromARGB(255, 2, 48, 71))),
+                          decoration: const BoxDecoration(
+                            boxShadow: [
+                              BoxShadow(
+                                  color: Colors.grey,
+                                  blurRadius: 2,
+                                  blurStyle: BlurStyle.normal)
+                            ],
+                          ),
                           child: TextField(
                             style: const TextStyle(color: Colors.black),
                             keyboardType: TextInputType.multiline,
@@ -104,10 +112,14 @@ class _LeaveApplicationScreenState extends State<LeaveApplicationScreen> {
                         Container(
                           margin: const EdgeInsets.symmetric(
                               horizontal: 20, vertical: 14),
-                          padding: const EdgeInsets.only(top: 4),
-                          decoration: BoxDecoration(
-                              border: Border.all(
-                                  color: const Color.fromARGB(255, 2, 48, 71))),
+                          decoration: const BoxDecoration(
+                            boxShadow: [
+                              BoxShadow(
+                                  color: Colors.grey,
+                                  blurRadius: 2,
+                                  blurStyle: BlurStyle.normal)
+                            ],
+                          ),
                           child: DateTimeField(
                             decoration: const InputDecoration(
                               border: InputBorder.none,
@@ -130,10 +142,14 @@ class _LeaveApplicationScreenState extends State<LeaveApplicationScreen> {
                         Container(
                           margin: const EdgeInsets.symmetric(
                               horizontal: 20, vertical: 14),
-                          padding: const EdgeInsets.only(top: 4),
-                          decoration: BoxDecoration(
-                              border: Border.all(
-                                  color: const Color.fromARGB(255, 2, 48, 71))),
+                          decoration: const BoxDecoration(
+                            boxShadow: [
+                              BoxShadow(
+                                  color: Colors.grey,
+                                  blurRadius: 2,
+                                  blurStyle: BlurStyle.normal)
+                            ],
+                          ),
                           child: DateTimeField(
                             decoration: const InputDecoration(
                               border: InputBorder.none,
@@ -156,10 +172,14 @@ class _LeaveApplicationScreenState extends State<LeaveApplicationScreen> {
                         Container(
                           margin: const EdgeInsets.symmetric(
                               horizontal: 20, vertical: 14),
-                          padding: const EdgeInsets.only(top: 4),
-                          decoration: BoxDecoration(
-                              border: Border.all(
-                                  color: const Color.fromARGB(255, 2, 48, 71))),
+                          decoration: const BoxDecoration(
+                            boxShadow: [
+                              BoxShadow(
+                                  color: Colors.grey,
+                                  blurRadius: 2,
+                                  blurStyle: BlurStyle.normal)
+                            ],
+                          ),
                           child: TextField(
                             style: const TextStyle(color: Colors.black),
                             decoration: const InputDecoration(

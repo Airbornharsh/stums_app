@@ -34,8 +34,8 @@ class _FacultyScreenState extends State<FacultyScreen> {
               margin: const EdgeInsets.all(8),
               child: GestureDetector(
                 onTap: () {
-                  Navigator.of(context)
-                      .pushNamed(StudentProfileScreen.routeName);
+                  // Navigator.of(context)
+                  //     .pushNamed(StudentProfileScreen.routeName);
                 },
                 child: ClipRRect(
                     borderRadius: BorderRadius.circular(100),

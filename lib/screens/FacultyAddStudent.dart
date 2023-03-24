@@ -43,7 +43,7 @@ class _FacultyAddStudentState extends State<FacultyAddStudent> {
         Scaffold(
           appBar: AppBar(
             backgroundColor: const Color.fromARGB(255, 2, 48, 71),
-            title: const Text("Leave Application"),
+            title: const Text("Add Student"),
           ),
           body: Column(
             children: [
@@ -61,10 +61,14 @@ class _FacultyAddStudentState extends State<FacultyAddStudent> {
                         Container(
                           margin: const EdgeInsets.symmetric(
                               horizontal: 20, vertical: 14),
-                          padding: const EdgeInsets.only(top: 4),
-                          decoration: BoxDecoration(
-                              border: Border.all(
-                                  color: const Color.fromARGB(255, 2, 48, 71))),
+                          decoration: const BoxDecoration(
+                            boxShadow: [
+                              BoxShadow(
+                                  color: Colors.grey,
+                                  blurRadius: 2,
+                                  blurStyle: BlurStyle.normal)
+                            ],
+                          ),
                           child: TextField(
                             style: const TextStyle(color: Colors.black),
                             decoration: const InputDecoration(
@@ -82,10 +86,14 @@ class _FacultyAddStudentState extends State<FacultyAddStudent> {
                         Container(
                           margin: const EdgeInsets.symmetric(
                               horizontal: 20, vertical: 14),
-                          padding: const EdgeInsets.only(top: 4),
-                          decoration: BoxDecoration(
-                              border: Border.all(
-                                  color: const Color.fromARGB(255, 2, 48, 71))),
+                          decoration: const BoxDecoration(
+                            boxShadow: [
+                              BoxShadow(
+                                  color: Colors.grey,
+                                  blurRadius: 2,
+                                  blurStyle: BlurStyle.normal)
+                            ],
+                          ),
                           child: TextField(
                             style: const TextStyle(color: Colors.black),
                             keyboardType: TextInputType.multiline,
@@ -105,10 +113,14 @@ class _FacultyAddStudentState extends State<FacultyAddStudent> {
                         Container(
                           margin: const EdgeInsets.symmetric(
                               horizontal: 20, vertical: 14),
-                          padding: const EdgeInsets.only(top: 4),
-                          decoration: BoxDecoration(
-                              border: Border.all(
-                                  color: const Color.fromARGB(255, 2, 48, 71))),
+                          decoration: const BoxDecoration(
+                            boxShadow: [
+                              BoxShadow(
+                                  color: Colors.grey,
+                                  blurRadius: 2,
+                                  blurStyle: BlurStyle.normal)
+                            ],
+                          ),
                           child: DateTimeField(
                             decoration: const InputDecoration(
                               border: InputBorder.none,
@@ -131,10 +143,14 @@ class _FacultyAddStudentState extends State<FacultyAddStudent> {
                         Container(
                           margin: const EdgeInsets.symmetric(
                               horizontal: 20, vertical: 14),
-                          padding: const EdgeInsets.only(top: 4),
-                          decoration: BoxDecoration(
-                              border: Border.all(
-                                  color: const Color.fromARGB(255, 2, 48, 71))),
+                          decoration: const BoxDecoration(
+                            boxShadow: [
+                              BoxShadow(
+                                  color: Colors.grey,
+                                  blurRadius: 2,
+                                  blurStyle: BlurStyle.normal)
+                            ],
+                          ),
                           child: TextField(
                             style: const TextStyle(color: Colors.black),
                             keyboardType: TextInputType.visiblePassword,
@@ -153,10 +169,14 @@ class _FacultyAddStudentState extends State<FacultyAddStudent> {
                         Container(
                           margin: const EdgeInsets.symmetric(
                               horizontal: 20, vertical: 14),
-                          padding: const EdgeInsets.only(top: 4),
-                          decoration: BoxDecoration(
-                              border: Border.all(
-                                  color: const Color.fromARGB(255, 2, 48, 71))),
+                          decoration: const BoxDecoration(
+                            boxShadow: [
+                              BoxShadow(
+                                  color: Colors.grey,
+                                  blurRadius: 2,
+                                  blurStyle: BlurStyle.normal)
+                            ],
+                          ),
                           child: TextField(
                             style: const TextStyle(color: Colors.black),
                             keyboardType: TextInputType.number,
@@ -175,10 +195,14 @@ class _FacultyAddStudentState extends State<FacultyAddStudent> {
                         Container(
                           margin: const EdgeInsets.symmetric(
                               horizontal: 20, vertical: 14),
-                          padding: const EdgeInsets.only(top: 4),
-                          decoration: BoxDecoration(
-                              border: Border.all(
-                                  color: const Color.fromARGB(255, 2, 48, 71))),
+                          decoration: const BoxDecoration(
+                            boxShadow: [
+                              BoxShadow(
+                                  color: Colors.grey,
+                                  blurRadius: 2,
+                                  blurStyle: BlurStyle.normal)
+                            ],
+                          ),
                           child: TextField(
                             style: const TextStyle(color: Colors.black),
                             keyboardType: TextInputType.emailAddress,

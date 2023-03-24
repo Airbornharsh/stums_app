@@ -35,14 +35,14 @@ class _StudentLoginScreenState extends State<StudentLoginScreen> {
           body: Container(
             height: MediaQuery.of(context).size.height,
             width: MediaQuery.of(context).size.width,
-            decoration: const BoxDecoration(color: Colors.white),
+            decoration: BoxDecoration(color: Colors.grey.shade200),
             child: Center(
               child: Container(
                 padding: const EdgeInsets.only(
                     top: 20, left: 10, right: 10, bottom: 20),
                 width: (MediaQuery.of(context).size.width - 70),
                 // height: 500,
-                constraints: const BoxConstraints(maxHeight: 270),
+                constraints: const BoxConstraints(maxHeight: 310),
                 decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(15),
@@ -57,18 +57,30 @@ class _StudentLoginScreenState extends State<StudentLoginScreen> {
                 child: Container(
                   child: Column(
                     children: [
+                      const Text(
+                        "Student Login",
+                        style: TextStyle(
+                            fontSize: 20, fontWeight: FontWeight.w500),
+                      ),
+                      const SizedBox(
+                        height: 6,
+                      ),
                       Container(
                         margin: const EdgeInsets.symmetric(
                             horizontal: 15, vertical: 10),
-                        padding: const EdgeInsets.only(top: 4),
-                        decoration: BoxDecoration(
-                            border: Border.all(
-                                color: const Color.fromARGB(255, 2, 48, 71))),
+                        decoration: const BoxDecoration(
+                          boxShadow: [
+                            BoxShadow(
+                                color: Colors.grey,
+                                blurRadius: 2,
+                                blurStyle: BlurStyle.normal)
+                          ],
+                        ),
                         child: TextField(
                           style: const TextStyle(color: Colors.black),
                           decoration: const InputDecoration(
                             border: InputBorder.none,
-                            hintText: "Registration Number",
+                            labelText: "Registration Number",
                             hintStyle: TextStyle(
                               color: Colors.black,
                             ),
@@ -81,15 +93,19 @@ class _StudentLoginScreenState extends State<StudentLoginScreen> {
                       Container(
                         margin: const EdgeInsets.symmetric(
                             horizontal: 15, vertical: 10),
-                        padding: const EdgeInsets.only(top: 4),
-                        decoration: BoxDecoration(
-                            border: Border.all(
-                                color: const Color.fromARGB(255, 2, 48, 71))),
+                        decoration: const BoxDecoration(
+                          boxShadow: [
+                            BoxShadow(
+                                color: Colors.grey,
+                                blurRadius: 2,
+                                blurStyle: BlurStyle.normal)
+                          ],
+                        ),
                         child: TextField(
                           style: const TextStyle(color: Colors.black),
                           decoration: const InputDecoration(
                             border: InputBorder.none,
-                            hintText: "Password",
+                            labelText: "Password",
                             hintStyle: TextStyle(
                               color: Colors.black,
                             ),
@@ -123,7 +139,7 @@ class _StudentLoginScreenState extends State<StudentLoginScreen> {
                                         _registrationNoController.text.trim(),
                                         _passwordController.text.trim());
                             // await Provider.of<User>(context, listen: false)
-                            //     .studentLogin("2101110049", "Password1");
+                            //     .studentLogin("2101110032", "2002_40383");
 
                             if (loginRes == "Done") {
                               var snackBar = SnackBar(

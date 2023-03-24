@@ -25,6 +25,7 @@ class User with ChangeNotifier {
       institute: "",
       name: "",
       phoneNumber: "",
+      registrationNo: "",
       emailId: "",
       dob: "",
       leaveApplications: [],
@@ -94,6 +95,7 @@ class User with ChangeNotifier {
         institute: "",
         name: "",
         phoneNumber: "",
+        registrationNo: "",
         emailId: "",
         dob: "",
         leaveApplications: [],
@@ -110,7 +112,11 @@ class User with ChangeNotifier {
       var tokenRes = await client.post(
           Uri.parse("$domainUri/api/faculty/login"),
           body: json.encode({"institute": institute, "password": password}),
-          headers: {"Content-Type": "application/json"});
+          headers: {
+            "Content-Type": "application/json",
+            "Access-Control-Allow-Headers": "*",
+            "Access-Control-Allow-Methods": "*",
+          });
 
       if (tokenRes.statusCode != 200) {
         throw tokenRes.body;
@@ -158,15 +164,17 @@ class User with ChangeNotifier {
     final prefs = await SharedPreferences.getInstance();
     String domainUri = prefs.getString("stums_backend_uri") as String;
 
-    print(domainUri);
-
     try {
-
       var tokenRes = await client.post(
           Uri.parse("$domainUri/api/student/login"),
           body: json
               .encode({"registrationNo": registrationNo, "password": password}),
-          headers: {"Content-Type": "application/json"});
+          headers: {
+            "Content-Type": "application/json",
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Headers": "*",
+            "Access-Control-Allow-Methods": "*",
+          });
 
       if (tokenRes.statusCode != 200) {
         throw tokenRes.body;
@@ -194,6 +202,7 @@ class User with ChangeNotifier {
           dob: parsedUserBody["dob"].toString(),
           emailId: parsedUserBody["emailId"].toString(),
           phoneNumber: parsedUserBody["phoneNumber"].toString(),
+          registrationNo: parsedUserBody["registrationNo"].toString(),
           institute: parsedUserBody["institute"].toString(),
           leaveApplications:
               List<String>.from(parsedUserBody["leaveApplications"]),
@@ -224,17 +233,20 @@ class User with ChangeNotifier {
     String domainUri = prefs.getString("stums_backend_uri") as String;
 
     try {
-      var res = await client.post(
-          Uri.parse("$domainUri/api/student/leave-application/create"),
-          body: json.encode({
-            "subject": subject,
-            "description": description,
-            "from": fromDate,
-            "to": toDate,
-            "hostel": hostel
-          }),
-          headers: {
+      var res = await client
+          .post(Uri.parse("$domainUri/api/student/leave-application/create"),
+              body: json.encode({
+                "subject": subject,
+                "description": description,
+                "from": fromDate,
+                "to": toDate,
+                "hostel": hostel
+              }),
+              headers: {
             "Content-Type": "application/json",
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Headers": "*",
+            "Access-Control-Allow-Methods": "*",
             "authorization": "stums $_accessToken"
           });
 
@@ -260,6 +272,9 @@ class User with ChangeNotifier {
       var res = await client
           .post(Uri.parse("$domainUri/api/student/fee-payment/list"), headers: {
         "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Headers": "*",
+        "Access-Control-Allow-Methods": "*",
         "authorization": "stums $accessToken"
       });
 
@@ -291,6 +306,9 @@ class User with ChangeNotifier {
       var res = await client
           .post(Uri.parse("$domainUri/api/student/mess-bill/list"), headers: {
         "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Headers": "*",
+        "Access-Control-Allow-Methods": "*",
         "authorization": "stums $accessToken"
       });
 
@@ -322,15 +340,18 @@ class User with ChangeNotifier {
     String domainUri = prefs.getString("stums_backend_uri") as String;
     String? accessToken = prefs.getString("stums_accessToken");
     try {
-      var res = await client.post(
-          Uri.parse("$domainUri/api/student/fee-payment"),
-          body: json.encode({
-            "amount": amount,
-            "currency": currency,
-            "year": year,
-          }),
-          headers: {
+      var res =
+          await client.post(Uri.parse("$domainUri/api/student/fee-payment"),
+              body: json.encode({
+                "amount": amount,
+                "currency": currency,
+                "year": year,
+              }),
+              headers: {
             "Content-Type": "application/json",
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Headers": "*",
+            "Access-Control-Allow-Methods": "*",
             "authorization": "stums $accessToken"
           });
 
@@ -362,16 +383,19 @@ class User with ChangeNotifier {
     String domainUri = prefs.getString("stums_backend_uri") as String;
     String? accessToken = prefs.getString("stums_accessToken");
     try {
-      var res = await client.post(
-          Uri.parse("$domainUri/api/student/fee-payment/verify"),
-          body: json.encode({
-            "razorpaySignature": razorpaySignature,
-            "razorpayPaymentId": razorpayPaymentId,
-            "razorpayOrderId": razorpayOrderId,
-            "year": year,
-          }),
-          headers: {
+      var res = await client
+          .post(Uri.parse("$domainUri/api/student/fee-payment/verify"),
+              body: json.encode({
+                "razorpaySignature": razorpaySignature,
+                "razorpayPaymentId": razorpayPaymentId,
+                "razorpayOrderId": razorpayOrderId,
+                "year": year,
+              }),
+              headers: {
             "Content-Type": "application/json",
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Headers": "*",
+            "Access-Control-Allow-Methods": "*",
             "authorization": "stums $accessToken"
           });
 
@@ -411,6 +435,9 @@ class User with ChangeNotifier {
           }),
           headers: {
             "Content-Type": "application/json",
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Headers": "*",
+            "Access-Control-Allow-Methods": "*",
             "authorization": "stums $accessToken"
           });
 
@@ -442,16 +469,19 @@ class User with ChangeNotifier {
     String domainUri = prefs.getString("stums_backend_uri") as String;
     String? accessToken = prefs.getString("stums_accessToken");
     try {
-      var res = await client.post(
-          Uri.parse("$domainUri/api/student/mess-bill/verify"),
-          body: json.encode({
-            "razorpaySignature": razorpaySignature,
-            "razorpayPaymentId": razorpayPaymentId,
-            "razorpayOrderId": razorpayOrderId,
-            "semester": semester,
-          }),
-          headers: {
+      var res = await client
+          .post(Uri.parse("$domainUri/api/student/mess-bill/verify"),
+              body: json.encode({
+                "razorpaySignature": razorpaySignature,
+                "razorpayPaymentId": razorpayPaymentId,
+                "razorpayOrderId": razorpayOrderId,
+                "semester": semester,
+              }),
+              headers: {
             "Content-Type": "application/json",
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Headers": "*",
+            "Access-Control-Allow-Methods": "*",
             "authorization": "stums $accessToken"
           });
 
@@ -480,6 +510,9 @@ class User with ChangeNotifier {
           Uri.parse("$domainUri/api/student/leave-application/list"),
           headers: {
             "Content-Type": "application/json",
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Headers": "*",
+            "Access-Control-Allow-Methods": "*",
             "authorization": "stums $accessToken"
           });
 
@@ -512,6 +545,9 @@ class User with ChangeNotifier {
           Uri.parse("$domainUri/api/faculty/leave-application/list"),
           headers: {
             "Content-Type": "application/json",
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Headers": "*",
+            "Access-Control-Allow-Methods": "*",
             "authorization": "stums $accessToken"
           });
 
@@ -544,6 +580,9 @@ class User with ChangeNotifier {
       var res = await client
           .post(Uri.parse("$domainUri/api/faculty/fee-payment/list"), headers: {
         "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Headers": "*",
+        "Access-Control-Allow-Methods": "*",
         "authorization": "stums $accessToken"
       });
 
@@ -575,6 +614,9 @@ class User with ChangeNotifier {
       var res = await client
           .post(Uri.parse("$domainUri/api/faculty/mess-bill/list"), headers: {
         "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Headers": "*",
+        "Access-Control-Allow-Methods": "*",
         "authorization": "stums $accessToken"
       });
 
@@ -610,18 +652,21 @@ class User with ChangeNotifier {
     String? accessToken = prefs.getString("stums_accessToken");
 
     try {
-      var res = await client.post(
-          Uri.parse("$domainUri/api/faculty/student/create"),
-          body: json.encode({
-            "name": name,
-            "password": password,
-            "phoneNumber": phoneNumber,
-            "registrationNo": registrationNo,
-            "emailId": emailId,
-            "dob": dob,
-          }),
-          headers: {
+      var res =
+          await client.post(Uri.parse("$domainUri/api/faculty/student/create"),
+              body: json.encode({
+                "name": name,
+                "password": password,
+                "phoneNumber": phoneNumber,
+                "registrationNo": registrationNo,
+                "emailId": emailId,
+                "dob": dob,
+              }),
+              headers: {
             "Content-Type": "application/json",
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Headers": "*",
+            "Access-Control-Allow-Methods": "*",
             "authorization": "stums $accessToken"
           });
 

@@ -3,6 +3,7 @@ class StudentModel {
   String institute;
   String name;
   String phoneNumber;
+  String registrationNo;
   String emailId;
   String dob;
   List<String> leaveApplications;
@@ -14,6 +15,7 @@ class StudentModel {
       required this.institute,
       required this.name,
       required this.phoneNumber,
+      required this.registrationNo,
       required this.emailId,
       required this.dob,
       required this.leaveApplications,
